@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Math Flashcards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Math Flashcards</h1>
+  <section>
+    <h2>Test Yourself!</h2>
+    <div class="flashcard" id="flashcard">
+      <div id="cardFront"><strong>What is the degree of 7x<sup>3</sup> + 2x?</strong></div>
+      <button onclick="flipCard()">Show Answer</button>
+      <div id="cardBack" style="display:none;"><strong>3</strong> (the highest power of x)</div>
+    </div>
+    <br>
+    <div class="flashcard" id="flashcard2">
+      <div id="cardFront2"><strong>What is the factored form of x<sup>2</sup> - 25?</strong></div>
+      <button onclick="flipCard2()">Show Answer</button>
+      <div id="cardBack2" style="display:none;"><strong>(x + 5)(x - 5)</strong> (difference of squares)</div>
+    </div>
+    <br>
+    <div class="flashcard" id="flashcard3">
+      <div id="cardFront3"><strong>What is i<sup>2</sup>?</strong></div>
+      <button onclick="flipCard3()">Show Answer</button>
+      <div id="cardBack3" style="display:none;"><strong>-1</strong></div>
+    </div>
+  </section>
+  <nav>
+    <a href="index.html">Back to Home</a>
+  </nav>
+  <script>
+    function flipCard() {
+      document.getElementById('cardBack').style.display = 'block';
+    }
+    function flipCard2() {
+      document.getElementById('cardBack2').style.display = 'block';
+    }
+    function flipCard3() {
+      document.getElementById('cardBack3').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

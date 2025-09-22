@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complex Numbers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Complex Numbers</h1>
+  <section>
+    <h2>Definition</h2>
+    <p>
+      A complex number is a number in the form <strong>a + bi</strong>, where <strong>a</strong> is the real part and <strong>b</strong> is the imaginary part (<strong>i</strong> is the square root of -1).
+    </p>
+    <button onclick="showExamples()">Show Examples</button>
+    <ul id="complexExamples" style="display:none;">
+      <li>5 + 2i</li>
+      <li>-3 - 7i</li>
+      <li>0 + 4i</li>
+    </ul>
+    <script>
+      function showExamples() {
+        document.getElementById('complexExamples').style.display = 'block';
+      }
+    </script>
+  </section>
+  <section>
+    <h2>Identify Real and Imaginary Parts</h2>
+    <p>Type the real part of <strong>7 - 4i</strong>:</p>
+    <input type="number" id="realPartInput" placeholder="Real part">
+    <button onclick="checkRealPart()">Check</button>
+    <span id="realPartResult"></span>
+    <script>
+      function checkRealPart() {
+        let val = document.getElementById('realPartInput').value;
+        let res = document.getElementById('realPartResult');
+        if(val=="7") {
+          res.textContent="Correct!";
+          res.style.color="green";
+        } else if(val.length) {
+          res.textContent="Try again!";
+          res.style.color="red";
+        } else {
+          res.textContent="Type your answer.";
+          res.style.color="orange";
+        }
+      }
+    </script>
+    <p>Type the imaginary part of <strong>7 - 4i</strong>:</p>
+    <input type="number" id="imagPartInput" placeholder="Imaginary part (just the number)">
+    <button onclick="checkImagPart()">Check</button>
+    <span id="imagPartResult"></span>
+    <script>
+      function checkImagPart() {
+        let val = document.getElementById('imagPartInput').value;
+        let res = document.getElementById('imagPartResult');
+        if(val=="-4") {
+          res.textContent="Correct!";
+          res.style.color="green";
+        } else if(val.length) {
+          res.textContent="Try again!";
+          res.style.color="red";
+        } else {
+          res.textContent="Type your answer.";
+          res.style.color="orange";
+        }
+      }
+    </script>
+  </section>
+  <section>
+    <h2>Quiz: Imaginary Unit</h2>
+    <p>What is the value of <strong>i<sup>2</sup></strong>?</p>
+    <input type="radio" name="iSquared" value="1" id="i1"><label for="i1">1</label>
+    <input type="radio" name="iSquared" value="-1" id="i2"><label for="i2">-1</label>
+    <input type="radio" name="iSquared" value="0" id="i0"><label for="i0">0</label>
+    <button onclick="checkiSquared()">Check</button>
+    <span id="iSquaredResult"></span>
+    <script>
+      function checkiSquared() {
+        let ans = '';
+        document.querySelectorAll('input[name="iSquared"]').forEach(el=>{
+          if(el.checked) ans=el.value;
+        });
+        const result = document.getElementById('iSquaredResult');
+        if(ans=="-1") {
+          result.textContent="Correct!";
+          result.style.color="green";
+        } else if(ans) {
+          result.textContent="Incorrect!";
+          result.style.color="red";
+        } else {
+          result.textContent="Select an answer.";
+          result.style.color="orange";
+        }
+      }
+    </script>
+  </section>
+  <section>
+    <h2>Real-life Application</h2>
+    <p>Complex numbers are used in signal processing, AC circuit analysis, and fractals.</p>
+  </section>
+  <nav>
+    <a href="index.html">Back to Home</a>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Math Practice</h1>
+  <section>
+    <h2>Test Your Knowledge!</h2>
+    <ol>
+      <li>
+        <strong>Polynomial:</strong> What is the coefficient of x in <strong>2x + 5</strong>?<br>
+        <input type="number" id="polyCoeff">
+        <button onclick="checkPolyCoeff()">Check</button>
+        <span id="polyResult"></span>
+      </li>
+      <li>
+        <strong>Factoring:</strong> Factor <strong>x<sup>2</sup> + 6x + 9</strong>.<br>
+        <input type="text" id="practiceFactorInput" placeholder="Your answer">
+        <button onclick="checkPracticeFactor()">Check</button>
+        <span id="practiceFactorResult"></span>
+        <button onclick="showPracticeHint()">Show Hint</button>
+        <span id="practiceFactorHint" style="display:none;">Hint: What's the square root of 9?</span>
+      </li>
+      <li>
+        <strong>Complex Numbers:</strong> What is the real part of <strong>3 + 8i</strong>?<br>
+        <input type="number" id="complexReal">
+        <button onclick="checkComplexReal()">Check</button>
+        <span id="complexResult"></span>
+      </li>
+      <li>
+        <strong>Challenge:</strong> What is the degree of <strong>9x<sup>5</sup> + 4x<sup>3</sup> - x</strong>?<br>
+        <input type="number" id="challengeDegree">
+        <button onclick="checkChallengeDegree()">Check</button>
+        <span id="challengeDegreeResult"></span>
+      </li>
+    </ol>
+  </section>
+  <nav>
+    <a href="index.html">Back to Home</a>
+  </nav>
+  <script>
+    function checkPolyCoeff() {
+      let val = document.getElementById('polyCoeff').value;
+      let res = document.getElementById('polyResult');
+      if (val == "2") {
+        res.textContent = "Correct!";
+        res.style.color = "green";
+      } else {
+        res.textContent = "Try again!";
+        res.style.color = "red";
+      }
+    }
+    function checkPracticeFactor() {
+      let val = document.getElementById('practiceFactorInput').value.replace(/\s+/g, '');
+      let res = document.getElementById('practiceFactorResult');
+      if (val == "(x+3)(x+3)" || val == "(x+3)^2") {
+        res.textContent = "Correct!";
+        res.style.color = "green";
+      } else if (val.length) {
+        res.textContent = "Try again!";
+        res.style.color = "red";
+      } else {
+        res.textContent = "Type your answer.";
+        res.style.color = "orange";
+      }
+    }
+    function showPracticeHint() {
+      document.getElementById('practiceFactorHint').style.display = "inline";
+    }
+    function checkComplexReal() {
+      let val = document.getElementById('complexReal').value;
+      let res = document.getElementById('complexResult');
+      if (val == "3") {
+        res.textContent = "Correct!";
+        res.style.color = "green";
+      } else {
+        res.textContent = "Try again!";
+        res.style.color = "red";
+      }
+    }
+    function checkChallengeDegree() {
+      let val = document.getElementById('challengeDegree').value;
+      let res = document.getElementById('challengeDegreeResult');
+      if (val == "5") {
+        res.textContent = "Correct!";
+        res.style.color = "green";
+      } else {
+        res.textContent = "Try again!";
+        res.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
